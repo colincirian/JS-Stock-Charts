@@ -21,7 +21,7 @@ async function main() {
                 label: stock.meta.symbol,
                 backgroundColor: getColor(stock.meta.symbol),
                 borderColor: getColor(stock.meta.symbol),
-                data: stock.values.map(value => parseFloat(value.high))
+                data: stock.values.reverse().map(value => parseFloat(value.high))
             }))
         }
     });
@@ -88,15 +88,15 @@ main()
 
 function getColor(stock){
     if(stock === "GME"){
-        return 'rgba(61, 161, 61, 0.7)'
+        return 'rgba(255, 0, 255))'
     }
     if(stock === "MSFT"){
-        return 'rgba(209, 4, 25, 0.7)'
+        return 'rgba(0, 0, 255)'
     }
     if(stock === "DIS"){
-        return 'rgba(18, 4, 209, 0.7)'
+        return 'rgba(255, 165, 0)'
     }
     if(stock === "BNTX"){
-        return 'rgba(166, 43, 158, 0.7)'
+        return 'rgba(0, 255, 255)'
     }
 }
